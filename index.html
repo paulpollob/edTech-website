@@ -12,6 +12,13 @@
         integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
     <!-- bootstrap linking end -->
     <script src="https://kit.fontawesome.com/2bfeb4e8f4.js" crossorigin="anonymous"></script>
+    <style>
+        @media screen and (max-width: 990px) {
+            #text1, #text2{
+                display: none;
+            }
+        }
+    </style>
 </head>
 
 <body>
@@ -118,35 +125,7 @@
                                 </div>
                             </div>
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-                            <!-- <div class="carousel-item d-flex align-items-center justify-content-center"
-                                style="background-image: url('images/cover/cover-23.png');height: 700px;">
-                                <div class=" text-white text-center">
-                                    <h1>Get Started Digital</h1>
-                                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint quam numquam quaerat?
-                                    </p>
-                                    <button class="btn btn-primary">Get Started</button>
-                                </div>
-                            </div>
-                            <div class="carousel-item  d-flex align-items-center justify-content-center"
-                                style="background-image: url('images/cover/cover-3.png');height: 700px; background-repeat: no-repeat;">
-                                <div class="p-5 text-white">
-                                    <h1>Get Started Digital</h1>
-                                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint quam numquam quaerat?
-                                    </p>
-                                    <button class="btn btn-primary">Get Started</button>
-                                </div>
-                            </div> -->
+     
                         </div>
                         <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls"
                             data-bs-slide="prev">
@@ -303,7 +282,7 @@
                         </div>
                     </div>
     
-                    <div class=" text-center">
+                    <div class="text-center">
                         <button class="btn btn-primary mt-3" id="viewbtn" type="button" onclick="action()">See More
                             Courses</button>
                     </div>
@@ -317,13 +296,13 @@
     
         <!-- Explore start -->
         <br>
-        <section class="container mt-5 px-0" id = "explore">
+        <section class="container mt-5 px-0 py-lg-0" id = "explore">
             <div class="card" style="max-width: 100%;">
                 <div class="row g-0">
                     <div class="col-md-5">
                         <img class="w-100 h-100" src="images/working.png" class="img-fluid rounded-start" alt="...">
                     </div>
-                    <div class="col-md-7 p-5 bg-light d-flex align-items-center">
+                    <div class="col-md-7 p-lg-5 p-2 bg-light">
                         <div class="card-body fw-bold">
                             <h1 class="card-title fw-bold my-4">Explore The elearning
                                 Institute</h1>
@@ -331,16 +310,16 @@
     
                             <p class="card-text text-muted  my-4">There are many variations of passages of Lorem Ipsum
                                 available, but the
-                                majority have suffered alteration in some form, by injected humour, or
+                                majority have suffered alteration in some form,<span class = "" id = "text1"> by injected humour, or
                                 randomised words which don't look even slightly believable. If you are going
-                                to use a passage of Lorem Ipsum, you need to be sure.
+                                to use a passage of Lorem Ipsum, you need to be sure.</span> <a id = "see" class = "d-inline d-lg-none border-none cursor-pointer"  onclick="more()">See more</a>
                             </p>
     
     
-                            <p class="text-muted my-4">
+                            <p class="text-muted my-4" id = "text2">
                                 Anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the
                                 Internet tend to repeat predefined.
-                            </p>
+                            </p> 
     
                             <div class="d-flex justify-content-between  my-4">
                                 <div>
@@ -874,6 +853,21 @@
                 document.getElementById("cnone3").style.display = "none";
                 document.getElementById("cnone4").style.display = "none";
                 document.getElementById("viewbtn2").textContent = "View all";
+            }
+        }
+        function more() {
+            
+            if (document.getElementById("text1").style.display !== "none") {
+
+                document.getElementById("see").textContent = "hide";
+                document.getElementById("text1").style.display = "inline";
+                document.getElementById("text2").style.display = "inline";
+                document.getElementById("see").style.display = "none";
+            } 
+            else{
+                document.getElementById("text1").style.display = "none";
+                document.getElementById("text2").style.display = "none";
+                document.getElementById("see").textContent = "See more";
             }
         }
     </script>
